@@ -46,13 +46,13 @@ function frequencySort(s) {
     const char = s[i];
     count.set(char, (count.get(char) || 0) + 1);
   }
-
+  console.log({count});
   // 2. Корзины: индекс = частота, значение = массив символов с этой частотой
   const freqList = Array.from({ length: s.length + 1 }, () => []);
   for (const [char, freq] of count.entries()) {
     freqList[freq].push(char);
   }
-
+  console.log({freqList});
   // 3. С конца freqList — сначала самые частые символы
   const result = [];
   for (let freq = freqList.length - 1; freq > 0; freq--) {
@@ -63,7 +63,7 @@ function frequencySort(s) {
       }
     }
   }
-
+  console.log({result});
   return result.join('');
 }
 
